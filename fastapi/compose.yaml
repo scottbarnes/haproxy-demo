@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  fastapi:
+    image: tiangolo/uvicorn-gunicorn-fastapi:python3.9
+    volumes:
+      - .:/app
+    ports:
+      - "3001:80"
+    environment:
+      - MODULE_NAME=main
+      - VARIABLE_NAME=app
+    # networks:
+    #   - default
